@@ -4,6 +4,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import androidx.collection.ArrayMap
+import tool.compet.core.BuildConfig
 import tool.compet.core.DkLogcats
 import tool.compet.core.DkTypeHelper
 import tool.compet.core.DkUtils
@@ -38,9 +39,9 @@ abstract class TheSqliteConnection : TheConnection {
 	abstract val writableDatabase: SQLiteDatabase
 
 	fun rawQuery(sql: String): Cursor {
-		if (BuildConfig.DEBUG) {
-			DkLogcats.info(this, "Query: $sql")
-		}
+		//if (BuildConfig.DEBUG) {
+		//	DkLogcats.info(this, "Query: $sql")
+		//}
 		return readableDatabase.rawQuery(sql, null)
 	}
 
